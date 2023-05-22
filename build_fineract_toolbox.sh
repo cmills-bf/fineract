@@ -17,8 +17,13 @@ $RUN sudo dnf install -y $APPLICATIONS;
 $RUN curl -O https://downloads.gradle.org/distributions/gradle-7.5.1-all.zip
 $RUN sudo mkdir /opt/gradle
 $RUN sudo unzip -d /opt/gradle gradle-7.5.1-all.zip
-
 $RUN sudo bash -c ' echo \
     "export PATH='$PATH':/opt/gradle/gradle-7.5.1" \
     > /etc/profile.d/gradle.sh'
 
+## Provide linked command outside of the toolbox for podman/docker
+
+$RUN sudo bash -c 'echo -e "\
+alias docker='\''flatpak-spawn --host /usr/bin/podman'\'' \n\
+alias podman='\''flatpak-spawn --host /usr/bin/podman'\'' "\
+> /etc/profile.d/docker.sh'
