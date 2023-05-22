@@ -18,7 +18,7 @@ $RUN curl -O https://downloads.gradle.org/distributions/gradle-7.5.1-all.zip
 $RUN sudo mkdir /opt/gradle
 $RUN sudo unzip -d /opt/gradle gradle-7.5.1-all.zip
 $RUN sudo bash -c ' echo \
-    "export PATH='$PATH':/opt/gradle/gradle-7.5.1" \
+    "export PATH='$PATH':/opt/gradle/gradle-7.5.1/bin" \
     > /etc/profile.d/gradle.sh'
 
 ## Provide linked command outside of the toolbox for podman/docker
