@@ -40,7 +40,7 @@ public final class SQLInjectionValidator {
 
     // TODO: see here https://rails-sqli.org for and
     // https://larrysteinle.com/2011/02/20/use-regular-expressions-to-detect-sql-code-injection more examples
-    private static final List<String> INJECTION_PATTERNS = List.of("(?i).*[or|and]\s*[\"']?-1[\"']?\\s*(-*).*",
+    private static final List<String> INJECTION_PATTERNS = List.of("(?i).*[or|and]\\s*[\"']?-1[\"']?\\s*(-*).*",
             "(?i).*\\s+[\"']?(\\d+)[\"']?\\s*=\\s*[\"']?(\\1)[\"']?\\s*(-*).*");
 
     public static void validateSQLInput(final String sqlSearch) {
