@@ -342,7 +342,7 @@ jar.dependsOn resolve
 test.dependsOn resolve
 checkstyleMain.dependsOn resolve
 checkstyleTest.dependsOn resolve
-rat.dependsOn prepareInputYaml
+// rat.dependsOn prepareInputYaml
 spotbugsTest.dependsOn resolve
 compileTestJava.dependsOn ':fineract-client:processResources'
 bootJarMainClassName.dependsOn resolve

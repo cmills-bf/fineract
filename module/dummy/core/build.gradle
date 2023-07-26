@@ -21,3 +21,11 @@ description = 'Fineract Module: Dummy Core'
 group = 'org.apache.fineract.dummy.core'
 
 apply from: 'dependencies.gradle'
+
+buildscript {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += [
+            "-Xlint:processing"
+        ]
+    }
+}

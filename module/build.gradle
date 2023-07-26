@@ -17,3 +17,11 @@
  * under the License.
  */
 description = 'Fineract Module'
+
+buildscript {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += [
+            "-Xlint:processing"
+        ]
+    }
+}

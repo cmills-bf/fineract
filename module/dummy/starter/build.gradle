@@ -21,3 +21,11 @@ description = 'Fineract Module: Dummy Starter'
 group = 'org.apache.fineract.dummy.starter'
 
 apply from: 'dependencies.gradle'
+
+buildscript {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += [
+            "-Xlint:processing"
+        ]
+    }
+}

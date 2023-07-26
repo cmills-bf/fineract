@@ -31,11 +31,11 @@
         </encoder>
     </appender>
 
-    <logger name="org.springframework.transaction" level="INFO" />
+    <logger name="org.springframework.transaction" level="OFF" />
     <logger name="org.springframework.data.convert" level="ERROR" />
     <logger name="org.springframework.http.converter.json" level="ERROR" />
 
-    <root level="INFO">
+    <root level="OFF">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
