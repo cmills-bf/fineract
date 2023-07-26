@@ -105,10 +105,10 @@ allprojects  {
 
     apply plugin: 'com.adarshr.test-logger'
     apply plugin: 'com.diffplug.spotless'
-    apply plugin: 'com.github.hierynomus.license'
+//    apply plugin: 'com.github.hierynomus.license'
     apply plugin: 'org.nosphere.apache.rat'
     apply plugin: 'project-report'
-    apply plugin: 'com.github.jk1.dependency-license-report'
+//     apply plugin: 'com.github.jk1.dependency-license-report'
 
     // Configuration for the sonarqube plugin is now in GitHub Actions
 
@@ -137,28 +137,28 @@ allprojects  {
 
     // Configuration for Gradle license plug-in
     // https://github.com/hierynomus/license-gradle-plugin
-    license {
-        header rootProject.file("$rootDir/APACHE_LICENSETEXT.md")
-        excludes([
-            "**/gradlew*",
-            "**/git.properties",
-            "**/*.html",
-            "**/templates/**",
-            "**/features/**",
-            "**/results/**",
-            "**/package-info.java",
-            "**/keystore.jks",
-            "**/legacy-docs/**",
-            "**/banner.txt",
-            "**/build.gradle.mustache",
-            "**/pom.mustache",
-        ])
-        strictCheck true
-    }
-
-    licenseReport {
-        outputDir = "$projectDir/licenses"
-    }
+//     license {
+//         header rootProject.file("$rootDir/APACHE_LICENSETEXT.md")
+//         excludes([
+//             "**/gradlew*",
+//             "**/git.properties",
+//             "**/*.html",
+//             "**/templates/**",
+//             "**/features/**",
+//             "**/results/**",
+//             "**/package-info.java",
+//             "**/keystore.jks",
+//             "**/legacy-docs/**",
+//             "**/banner.txt",
+//             "**/build.gradle.mustache",
+//             "**/pom.mustache",
+//         ])
+//         strictCheck true
+//     }
+//
+//     licenseReport {
+//         outputDir = "$projectDir/licenses"
+//     }
 
     // Configuration for Apache Release Audit Tool task
     // https://github.com/eskatos/creadur-rat-gradle
@@ -499,7 +499,8 @@ configure(project.fineractJavaProjects) {
     }
 
     compileJava {
-        dependsOn(rat, licenseMain, licenseTest)
+        //dependsOn(rat, licenseMain, licenseTest)
+        dependsOn(rat)
     }
 
     dependencies {

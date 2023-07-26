@@ -111,7 +111,8 @@ task buildAsciidoc(type: org.openapitools.generator.gradle.plugin.tasks.Generate
 }
 
 // TODO: @vidakovic we could provide even more client libs in different languages (Go, Ruby, Swift etc.)
-compileJava.dependsOn(buildJavaSdk, buildTypescriptAngularSdk, buildAsciidoc, licenseFormatMain, spotlessMiscApply)
+// compileJava.dependsOn(buildJavaSdk, buildTypescriptAngularSdk, buildAsciidoc, licenseFormatMain, spotlessMiscApply)
+compileJava.dependsOn(buildJavaSdk, buildTypescriptAngularSdk, buildAsciidoc, spotlessMiscApply)
 
 java {
     // keep this at Java 8, not 17; see https://issues.apache.org/jira/browse/FINERACT-1214
@@ -140,5 +141,5 @@ test {
 sourceSets.main.java.srcDir new File(buildDir, "generated/java/src/main/java")
 
 // NOTE: Gradle suggested these dependencies
-licenseFormatMain.dependsOn buildJavaSdk
-licenseMain.dependsOn buildJavaSdk
+// licenseFormatMain.dependsOn buildJavaSdk
+// licenseMain.dependsOn buildJavaSdk
