@@ -534,6 +534,15 @@ configure(project.fineractJavaProjects) {
     test {
         useJUnitPlatform()
         dependsOn 'cucumber'
+        testLogging {
+            events "FAILED"
+            exceptionFormat 'short'
+        }
+
+        onOutput { descriptor, event ->
+            println("descriptor class : ${descriptor.getClass()}")
+            println("event class : ${event.getClass()}")
+        }
 
         if (project.hasProperty('excludeTests')) {
             filter {
@@ -544,6 +553,10 @@ configure(project.fineractJavaProjects) {
 
     testlogger {
         logLevel 'quiet'
+        showStandardStreams true
+        showPassedStandardStreams false
+        showSkippedStandardStreams false
+        showFailedStandardStreams true
     }
 
     cucumber {
